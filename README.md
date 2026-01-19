@@ -14,6 +14,24 @@
 /plugin marketplace add zwmmm/oh-my-claudecode
 ```
 
+## 👤 用户配置命令
+
+### `/user:init` - 初始化用户配置
+
+将插件的全局规则追加到 `~/.claude/CLAUDE.md` 文件。
+
+```bash
+/user:init
+```
+
+**功能：**
+
+- 读取 `plugins/core/templates/user/CLAUDE.md` 模板
+- 将模板内容追加到全局配置文件 `~/.claude/CLAUDE.md`
+- 规则对所有 Claude Code 会话生效
+
+---
+
 ## 🛠️ Git 命令
 
 ### `/commit` - 智能提交

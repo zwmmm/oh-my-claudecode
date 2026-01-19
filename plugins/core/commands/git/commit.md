@@ -1,12 +1,13 @@
 ---
-model: claude-haiku
+model: haiku
 ---
 
 # Git Commit 详细指南
 
 智能分析改动并自动生成 Conventional Commits 风格的中文提交信息。
 
-> 💡 **建议**: 执行本命令前,建议先运行 `/clear` 命令清理上下文,以获得更好的分析效果。
+> 💡 **建议**: 执行本命令前,建议先运行 `/clear`
+> 命令清理上下文,以获得更好的分析效果。
 
 ## 目录
 
@@ -20,15 +21,15 @@ model: claude-haiku
 
 ## 选项说明
 
-| 选项 | 说明 |
-|------|------|
-| `--no-verify` | 跳过本地 Git 钩子（`pre-commit`/`commit-msg` 等） |
-| `--all` | 当暂存区为空时，自动 `git add -A` 将所有改动纳入提交 |
-| `--amend` | 修补上一次提交（保持提交作者与时间） |
-| `--signoff` | 附加 `Signed-off-by` 行（遵循 DCO 流程） |
-| `--emoji` | 在提交信息中包含 emoji 前缀 |
-| `--scope <scope>` | 指定提交作用域（如 `ui`、`docs`、`api`） |
-| `--type <type>` | 强制提交类型（覆盖自动判断） |
+| 选项              | 说明                                                 |
+| ----------------- | ---------------------------------------------------- |
+| `--no-verify`     | 跳过本地 Git 钩子（`pre-commit`/`commit-msg` 等）    |
+| `--all`           | 当暂存区为空时，自动 `git add -A` 将所有改动纳入提交 |
+| `--amend`         | 修补上一次提交（保持提交作者与时间）                 |
+| `--signoff`       | 附加 `Signed-off-by` 行（遵循 DCO 流程）             |
+| `--emoji`         | 在提交信息中包含 emoji 前缀                          |
+| `--scope <scope>` | 指定提交作用域（如 `ui`、`docs`、`api`）             |
+| `--type <type>`   | 强制提交类型（覆盖自动判断）                         |
 
 ---
 
@@ -134,4 +135,5 @@ BREAKING CHANGE: 认证 API 已完全重新设计，所有客户端必须更新�
 - **尊重钩子**：默认执行本地 Git 钩子；使用 `--no-verify` 可跳过
 - **不改源码内容**：只读写 `.git/COMMIT_EDITMSG` 与暂存区
 - **安全提示**：在 rebase/merge 冲突、detached HEAD 等状态下会先提示处理
-- **禁止 AI 标识**：生成的提交信息中禁止包含任何 AI 相关标识(如 `Co-Authored-By: Claude` 等)
+- **禁止 AI 标识**：生成的提交信息中禁止包含任何 AI 相关标识(如
+  `Co-Authored-By: Claude` 等)

@@ -1,12 +1,13 @@
 ---
-model: claude-haiku
+model: haiku
 ---
 
 # Git Worktree 详细指南
 
 管理 Git worktree，支持智能默认、IDE 集成和内容迁移。
 
-> 💡 **建议**: 执行本命令前,建议先运行 `/clear` 命令清理上下文,以获得更好的分析效果。
+> 💡 **建议**: 执行本命令前,建议先运行 `/clear`
+> 命令清理上下文,以获得更好的分析效果。
 
 ## 目录
 
@@ -22,21 +23,21 @@ model: claude-haiku
 
 ## 选项说明
 
-| 选项 | 说明 |
-|------|------|
-| `add [<path>]` | 在 `../.zcf/项目名/<path>` 添加新的 worktree |
-| `migrate <target>` | 迁移内容到指定 worktree |
-| `list` | 列出所有 worktree 及其状态 |
-| `remove <path>` | 删除指定路径的 worktree |
-| `prune` | 清理无效的 worktree 引用 |
-| `-b <branch>` | 创建新分支并检出到 worktree |
-| `-o, --open` | 创建成功后直接用 IDE 打开 |
-| `--from <source>` | 指定迁移源路径（migrate 专用） |
-| `--stash` | 迁移当前 stash 内容（migrate 专用） |
-| `--track` | 设置新分支跟踪对应的远程分支 |
-| `--guess-remote` | 自动猜测远程分支进行跟踪 |
-| `--detach` | 创建分离 HEAD 的 worktree |
-| `--lock` | 创建后锁定 worktree |
+| 选项               | 说明                                         |
+| ------------------ | -------------------------------------------- |
+| `add [<path>]`     | 在 `../.zcf/项目名/<path>` 添加新的 worktree |
+| `migrate <target>` | 迁移内容到指定 worktree                      |
+| `list`             | 列出所有 worktree 及其状态                   |
+| `remove <path>`    | 删除指定路径的 worktree                      |
+| `prune`            | 清理无效的 worktree 引用                     |
+| `-b <branch>`      | 创建新分支并检出到 worktree                  |
+| `-o, --open`       | 创建成功后直接用 IDE 打开                    |
+| `--from <source>`  | 指定迁移源路径（migrate 专用）               |
+| `--stash`          | 迁移当前 stash 内容（migrate 专用）          |
+| `--track`          | 设置新分支跟踪对应的远程分支                 |
+| `--guess-remote`   | 自动猜测远程分支进行跟踪                     |
+| `--detach`         | 创建分离 HEAD 的 worktree                    |
+| `--lock`           | 创建后锁定 worktree                          |
 
 ---
 
@@ -89,7 +90,8 @@ PROJECT_NAME=$(basename "$MAIN_REPO_PATH")
 WORKTREE_BASE="$MAIN_REPO_PATH/../.zcf/$PROJECT_NAME"
 ```
 
-**关键点**: 在现有 worktree 内创建新 worktree 时，始终使用绝对路径以防止路径嵌套问题。
+**关键点**: 在现有 worktree 内创建新 worktree
+时，始终使用绝对路径以防止路径嵌套问题。
 
 ---
 
@@ -129,6 +131,7 @@ copy_environment_files() {
 ## IDE 集成
 
 **支持的 IDE**（按优先级）：
+
 1. VS Code
 2. Cursor
 3. WebStorm

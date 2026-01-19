@@ -1,0 +1,178 @@
+{
+  "name": "oh-my-claudecode",
+  "version": "0.2.0",
+  "description": "一个强大且可扩展的 Claude Code 插件,提供 Git 增强命令、代码优化代理、UI/UX 设计智能和 MCP 工具检测等功能",
+  "author": {
+    "name": "zwmmm",
+    "email": "zwmmm@example.com"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/zwmmm/oh-my-claudecode"
+  },
+  "components": {
+    "commands": [
+      {
+        "id": "git-cleanBranches",
+        "title": "Git Clean Branches",
+        "description": "安全查找并清理已合并或过期的 Git 分支,支持 dry-run 模式与自定义基准/保护分支"
+      },
+      {
+        "id": "git-commit",
+        "title": "Git Commit",
+        "description": "仅用 Git 分析改动并自动生成 conventional commit 信息(可选 emoji);默认自动拆分提交,强制使用中文"
+      },
+      {
+        "id": "git-rollback",
+        "title": "Git Rollback",
+        "description": "交互式回滚 Git 分支到历史版本;列分支、列版本、二次确认后执行 reset / revert"
+      },
+      {
+        "id": "git-worktree",
+        "title": "Git Worktree",
+        "description": "管理 Git worktree,在项目平级的 ../.zcf/项目名/ 目录下创建,支持智能默认、IDE 集成和内容迁移"
+      }
+    ],
+    "agents": [
+      {
+        "id": "code-simplifier",
+        "title": "Code Simplifier",
+        "description": "简化和优化代码以提高清晰度、一致性和可维护性,同时保留所有功能"
+      }
+    ],
+    "hooks": [
+      {
+        "id": "notify",
+        "title": "Notification Hook",
+        "description": "在重要事件(通知、权限请求、停止)时发送系统通知"
+      },
+      {
+        "id": "pre-commit",
+        "title": "Pre-commit Hook",
+        "description": "提交前自动检查代码质量"
+      }
+    ],
+    "skills": [
+      {
+        "id": "skill-creator",
+        "title": "Skill Creator",
+        "description": "创建有效 skills 的指南,用于扩展 Claude 的能力"
+      },
+      {
+        "id": "ui-ux-pro-max",
+        "title": "UI/UX Pro Max",
+        "description": "UI/UX 设计智能,包含 50 种样式、21 个调色板、50 种字体配对、20 种图表类型和 8 个技术栈"
+      },
+      {
+        "id": "mcp-detector",
+        "title": "MCP Detector",
+        "description": "自动识别用户查询并推荐合适的 MCP 工具(context7、grep_app、web_search)"
+      }
+    ]
+  },
+  "categories": [
+    "development",
+    "productivity",
+    "workflow",
+    "git",
+    "code-quality",
+    "design"
+  ],
+  "keywords": [
+    "claude-code",
+    "plugin",
+    "development",
+    "workflow",
+    "git",
+    "commit",
+    "worktree",
+    "code-review",
+    "simplifier",
+    "ui-ux",
+    "design",
+    "mcp",
+    "automation"
+  ],
+  "claude": {
+    "minVersion": "1.0.0",
+    "capabilities": [
+      "commands",
+      "agents",
+      "hooks",
+      "skills"
+    ]
+  },
+  "features": {
+    "gitEnhancements": {
+      "title": "Git 增强功能",
+      "description": "提供分支清理、智能提交、版本回滚和 worktree 管理等高级 Git 操作",
+      "commands": [
+        "git-cleanBranches",
+        "git-commit",
+        "git-rollback",
+        "git-worktree"
+      ]
+    },
+    "codeQuality": {
+      "title": "代码质量",
+      "description": "通过代码简化代理和自动化钩子提升代码质量",
+      "agents": [
+        "code-simplifier"
+      ],
+      "hooks": [
+        "pre-commit"
+      ]
+    },
+    "designIntelligence": {
+      "title": "设计智能",
+      "description": "提供 UI/UX 设计指南、样式库和最佳实践",
+      "skills": [
+        "ui-ux-pro-max"
+      ]
+    },
+    "mcpIntegration": {
+      "title": "MCP 集成",
+      "description": "智能检测查询意图并推荐合适的 MCP 工具",
+      "skills": [
+        "mcp-detector"
+      ],
+      "hooks": [
+        "keyword-detector"
+      ]
+    },
+    "developerExperience": {
+      "title": "开发体验",
+      "description": "通过技能创建器和通知系统增强开发体验",
+      "skills": [
+        "skill-creator"
+      ],
+      "hooks": [
+        "notify"
+      ]
+    }
+  },
+  "changelog": {
+    "0.2.0": {
+      "date": "2026-01-19",
+      "changes": [
+        "新增 mcp-detector skill 用于智能 MCP 工具推荐",
+        "新增 git-cleanBranches 命令用于分支清理",
+        "新增 git-rollback 命令用于版本回滚",
+        "新增 git-worktree 命令用于 worktree 管理",
+        "新增 ui-ux-pro-max skill 用于 UI/UX 设计",
+        "改进 git-commit 命令支持自动拆分提交",
+        "完善 plugin.json 元数据和分类"
+      ]
+    },
+    "0.1.0": {
+      "date": "2026-01-15",
+      "changes": [
+        "初始版本发布",
+        "基础命令和代理",
+        "Pre-commit hook",
+        "Skill creator"
+      ]
+    }
+  }
+}

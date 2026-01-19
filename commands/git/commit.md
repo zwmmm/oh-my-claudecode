@@ -134,3 +134,4 @@ BREAKING CHANGE: 认证 API 已完全重新设计，所有客户端必须更新�
 - **尊重钩子**：默认执行本地 Git 钩子；使用 `--no-verify` 可跳过
 - **不改源码内容**：只读写 `.git/COMMIT_EDITMSG` 与暂存区
 - **安全提示**：在 rebase/merge 冲突、detached HEAD 等状态下会先提示处理
+- **禁止 AI 标识**：生成的提交信息中禁止包含任何 AI 相关标识(如 `Co-Authored-By: Claude` 等)

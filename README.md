@@ -3,14 +3,15 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Claude Code](https://img.shields.io/badge/Claude_Code-Plugin-blue.svg)](https://code.claude.com/docs/en/plugins)
 
-> 一个强大的 Claude Code 插件集合，提供 Git 工作流增强、UI/UX 设计智能、MCP 工具检测等实用功能
+> 一个强大的 Claude Code 插件集合，提供 Git 工作流增强、UI/UX 设计智能、MCP
+> 工具检测等实用功能
 
 ## 📦 安装
 
 在 Claude Code 中执行以下命令：
 
 ```bash
-/plugin marketplace add https://github.com/zwmmm/oh-my-claudecode.git
+/plugin marketplace add zwmmm/oh-my-claudecode
 ```
 
 ## 🛠️ Git 命令
@@ -28,6 +29,7 @@
 ```
 
 **特性：**
+
 - 自动推断提交类型 (feat/fix/refactor/docs 等)
 - 智能拆分：检测到多组独立变更时自动建议拆分提交
 - 支持 BREAKING CHANGE 和 Signed-off-by
@@ -44,6 +46,7 @@
 ```
 
 **安全护栏：**
+
 - 默认 dry-run 模式，预览即将执行的命令
 - 保护分支检测 (main/master/production)
 - 自动备份当前 HEAD 到 reflog
@@ -71,6 +74,7 @@
 ```
 
 **特性：**
+
 - 自动复制 `.env` 等环境文件
 - 支持 VS Code、Cursor、WebStorm 等 IDE
 - 统一的目录结构管理 (`../.zcf/项目名/`)
@@ -84,10 +88,12 @@ UI/UX 设计智能，包含 50 种样式、21 种配色方案、50 种字体搭�
 **触发场景：** 设计、构建、创建、实现 UI/UX 相关任务
 
 **支持的技术栈：**
+
 - Web: React, Next.js, Vue, Svelte, HTML+Tailwind
 - Mobile: SwiftUI, React Native, Flutter
 
 **示例：**
+
 ```
 帮我设计一个 SaaS 产品的 landing page
 创建一个暗色主题的 dashboard
@@ -104,6 +110,7 @@ UI/UX 设计智能，包含 50 种样式、21 种配色方案、50 种字体搭�
 自动检测用户查询意图，推荐合适的 MCP 工具。
 
 **自动识别：**
+
 - **文档查询** → 推荐 context7 (官方文档)
 - **代码示例** → 推荐 grep_app (GitHub 代码搜索)
 - **最新信息** → 推荐 web_search (网络搜索)
@@ -115,6 +122,7 @@ UI/UX 设计智能，包含 50 种样式、21 种配色方案、50 种字体搭�
 代码简化专家，自动精简和优化最近修改的代码。
 
 **工作原则：**
+
 - 保持功能不变，只优化实现方式
 - 遵循项目编码规范
 - 减少不必要的复杂性和嵌套
@@ -125,6 +133,7 @@ UI/UX 设计智能，包含 50 种样式、21 种配色方案、50 种字体搭�
 ### 通知钩子
 
 在以下事件时发送系统通知：
+
 - Claude 提问等待用户输入
 - 权限请求
 - 任务完成
@@ -141,7 +150,8 @@ UI/UX 设计智能，包含 50 种样式、21 种配色方案、50 种字体搭�
 ## 📮 联系方式
 
 - 问题反馈: [GitHub Issues](https://github.com/zwmmm/oh-my-claudecode/issues)
-- 功能建议: [GitHub Discussions](https://github.com/zwmmm/oh-my-claudecode/discussions)
+- 功能建议:
+  [GitHub Discussions](https://github.com/zwmmm/oh-my-claudecode/discussions)
 
 ---
 

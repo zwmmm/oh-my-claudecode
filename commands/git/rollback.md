@@ -1,3 +1,7 @@
+---
+model: claude-haiku
+---
+
 # Git Rollback 详细指南
 
 交互式回滚 Git 分支到历史版本，支持 reset 和 revert 两种模式。

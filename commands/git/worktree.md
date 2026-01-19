@@ -1,3 +1,7 @@
+---
+model: claude-haiku
+---
+
 # Git Worktree 详细指南
 
 管理 Git worktree，支持智能默认、IDE 集成和内容迁移。

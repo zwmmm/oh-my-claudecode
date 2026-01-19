@@ -1,3 +1,7 @@
+---
+model: claude-haiku
+---
+
 # Git Commit 详细指南
 
 智能分析改动并自动生成 Conventional Commits 风格的中文提交信息。

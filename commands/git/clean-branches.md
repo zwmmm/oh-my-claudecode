@@ -1,3 +1,7 @@
+---
+model: claude-haiku
+---
+
 # Git Clean Branches 详细指南
 
 安全识别并清理已合并或过期的 Git 分支。

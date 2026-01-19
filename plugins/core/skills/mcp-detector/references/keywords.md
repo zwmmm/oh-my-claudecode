@@ -122,6 +122,11 @@
 - `current` - 当前
 - `modern` - 现代的
 - `upcoming` - 即将到来
+- `fix bug` / `fix bugs` - 修复 bug
+- `error` - 错误
+- `issue` - 问题/issue
+- `troubleshooting` - 故障排除
+- `debug` - 调试
 
 ### 中文关键词
 - `最新`
@@ -135,6 +140,11 @@
 - `当前`
 - `现代`
 - `即将`
+- `修复 bug`
+- `fix bug`
+- `解决错误`
+- `排除故障`
+- `调试`
 
 ### 日语关键词
 - `最新` (saishin) - 最新
@@ -156,7 +166,7 @@
 
 ### 正则表达式模式
 ```regex
-/\b(2025|2026|latest|new|recent|news|update|version\s+\d+|release|changelog|what's\s+new|current|modern)\b|最新|新闻|更新|版本|发布|최신|뉴스|업데이트|버전|최신|リリース|ニュース|アップデート|バージョン/i
+/\b(2025|2026|latest|new|recent|news|update|version\s+\d+|release|changelog|what's\s+new|current|modern|fix\s+bug|error|issue|troubleshooting|debug)\b|最新|新闻|更新|版本|发布|修复\s*bug|fix\s*bug|解决错误|排除故障|调试|최신|뉴스|업데이트|버전|버그\s*수정|오류\s*해결|최신|リリース|ニュース|アップデート|バージョン|バグ\s*修正/i
 ```
 
 ---
@@ -236,7 +246,19 @@
 
 ---
 
-### 场景 5: 代码块过滤
+### 场景 5: Bug 修复查询
+**用户输入**: "修复 bug: useEffect 报错 Too many re-renders"
+
+**匹配结果**:
+- ❌ context7 (无匹配)
+- ❌ grep_app (无匹配)
+- ✅ web_search (关键词: "修复 bug", "报错")
+
+**推荐**: 使用 web_search 查找该错误的最新解决方案
+
+---
+
+### 场景 6: 代码块过滤
 **用户输入**:
 ```
 我想修复这段代码:
@@ -249,9 +271,9 @@ function example() {}
 **匹配结果**:
 - ❌ context7 (代码块中的 "how to use" 被忽略)
 - ❌ grep_app (代码块中的 "example" 被忽略)
-- ❌ web_search (无匹配)
+- ✅ web_search (关键词: "修复", 虽然在自然语言中)
 
-**推荐**: 不推荐任何 MCP 工具
+**推荐**: 使用 web_search 查找相关信息
 
 ---
 

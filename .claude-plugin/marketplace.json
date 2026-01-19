@@ -1,0 +1,33 @@
+{
+  "name": "oh-my-claudecode",
+  "owner": {
+    "name": "wayne",
+    "email": "hiiwayne@163.com"
+  },
+  "metadata": {
+    "description": "一个强大且可扩展的 Claude Code 插件市场，提供 Git 工作流技能、代码优化代理、UI/UX 设计智能和 MCP 工具检测等功能",
+    "version": "0.3.0"
+  },
+  "plugins": [
+    {
+      "name": "oh",
+      "source": "./",
+      "description": "一个强大且可扩展的 Claude Code 插件，提供 Git 工作流技能、代码优化代理、UI/UX 设计智能和 MCP 工具检测等功能",
+      "version": "0.3.0",
+      "author": {
+        "name": "zwmmm",
+        "email": "zwmmm@example.com"
+      },
+      "repository": "https://github.com/zwmmm/oh-my-claudecode",
+      "license": "MIT",
+      "keywords": [
+        "git",
+        "workflow",
+        "code-optimization",
+        "ui-ux",
+        "mcp-detector"
+      ],
+      "category": "productivity"
+    }
+  ]
+}

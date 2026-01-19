@@ -4,14 +4,13 @@
     "name": "wayne",
     "email": "hiiwayne@163.com"
   },
-  "metadata": {
-    "description": "一个强大且可扩展的 Claude Code 插件市场，提供 Git 工作流技能、代码优化代理、UI/UX 设计智能和 MCP 工具检测等功能",
-    "version": "0.3.0"
-  },
   "plugins": [
     {
       "name": "oh",
-      "source": "./",
+      "source": "./plugins/core",
+      "strict": false,
+      "version": "1.0.0",
+      "category": "development",
       "description": "一个强大且可扩展的 Claude Code 插件，提供 Git 工作流技能、代码优化代理、UI/UX 设计智能和 MCP 工具检测等功能",
       "author": {
         "name": "wayne"

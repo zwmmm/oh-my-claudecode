@@ -1,7 +1,7 @@
 {
   "name": "oh-my-claudecode",
-  "version": "0.2.0",
-  "description": "一个强大且可扩展的 Claude Code 插件,提供 Git 增强命令、代码优化代理、UI/UX 设计智能和 MCP 工具检测等功能",
+  "version": "0.3.0",
+  "description": "一个强大且可扩展的 Claude Code 插件,提供 Git 工作流技能、代码优化代理、UI/UX 设计智能和 MCP 工具检测等功能",
   "author": {
     "name": "zwmmm",
     "email": "zwmmm@example.com"
@@ -12,28 +12,7 @@
     "url": "https://github.com/zwmmm/oh-my-claudecode"
   },
   "components": {
-    "commands": [
-      {
-        "id": "git-cleanBranches",
-        "title": "Git Clean Branches",
-        "description": "安全查找并清理已合并或过期的 Git 分支,支持 dry-run 模式与自定义基准/保护分支"
-      },
-      {
-        "id": "git-commit",
-        "title": "Git Commit",
-        "description": "仅用 Git 分析改动并自动生成 conventional commit 信息(可选 emoji);默认自动拆分提交,强制使用中文"
-      },
-      {
-        "id": "git-rollback",
-        "title": "Git Rollback",
-        "description": "交互式回滚 Git 分支到历史版本;列分支、列版本、二次确认后执行 reset / revert"
-      },
-      {
-        "id": "git-worktree",
-        "title": "Git Worktree",
-        "description": "管理 Git worktree,在项目平级的 ../.zcf/项目名/ 目录下创建,支持智能默认、IDE 集成和内容迁移"
-      }
-    ],
+    "commands": [],
     "agents": [
       {
         "id": "code-simplifier",
@@ -54,6 +33,11 @@
       }
     ],
     "skills": [
+      {
+        "id": "git",
+        "title": "Git Workflow",
+        "description": "完整的 Git 工作流技能,包含智能提交、worktree 管理、分支清理和版本回滚功能"
+      },
       {
         "id": "skill-creator",
         "title": "Skill Creator",
@@ -104,14 +88,11 @@
     ]
   },
   "features": {
-    "gitEnhancements": {
-      "title": "Git 增强功能",
-      "description": "提供分支清理、智能提交、版本回滚和 worktree 管理等高级 Git 操作",
-      "commands": [
-        "git-cleanBranches",
-        "git-commit",
-        "git-rollback",
-        "git-worktree"
+    "gitWorkflow": {
+      "title": "Git 工作流",
+      "description": "完整的 Git 操作工具集,涵盖智能提交、worktree 管理、分支清理和版本回滚",
+      "skills": [
+        "git"
       ]
     },
     "codeQuality": {
@@ -136,9 +117,6 @@
       "description": "智能检测查询意图并推荐合适的 MCP 工具",
       "skills": [
         "mcp-detector"
-      ],
-      "hooks": [
-        "keyword-detector"
       ]
     },
     "developerExperience": {
@@ -153,6 +131,15 @@
     }
   },
   "changelog": {
+    "0.3.0": {
+      "date": "2026-01-19",
+      "changes": [
+        "重构: 将 git 命令整合为统一的 git-workflow skill",
+        "移除: 独立的 git-cleanBranches、git-commit、git-rollback、git-worktree 命令",
+        "新增: skills/git 技能,包含完整的 Git 工作流功能",
+        "简化: 插件结构更加清晰,遵循 KISS 原则"
+      ]
+    },
     "0.2.0": {
       "date": "2026-01-19",
       "changes": [

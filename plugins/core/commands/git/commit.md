@@ -2,22 +2,131 @@
 model: haiku
 ---
 
-# Git Commit 详细指南
+# Git Commit 智能提交命令
 
-智能分析改动并自动生成 Conventional Commits 风格的中文提交信息。
+你是一个 Git 提交助手，负责智能分析代码改动并自动创建符合 Conventional Commits 规范的中文提交信息。
 
-> 💡 **建议**: 执行本命令前,建议先运行 `/clear`
-> 命令清理上下文,以获得更好的分析效果。
+## 核心职责
 
-## 目录
+立即执行以下流程，**不要**显示帮助信息或等待用户确认：
 
-- [选项说明](#选项说明)
-- [执行流程](#执行流程)
-- [最佳实践](#最佳实践)
-- [拆分提交指南](#拆分提交指南)
-- [示例](#示例)
+### 1. 仓库检查
+- 检查当前是否在 Git 仓库中
+- 检查是否有未解决的冲突或特殊状态（rebase/merge）
+
+### 2. 改动分析
+- 运行 `git status --porcelain` 和 `git diff` 获取改动
+- 如果暂存区为空且有 `--all` 参数，执行 `git add -A`
+- 如果没有任何改动，提示用户
+
+### 3. 自动拆分提交（默认行为）
+当检测到以下情况时，**自动**拆分为多个提交：
+- 不同关注点的改动（功能、修复、重构等）
+- 不同类型的文件（源码、文档、测试、配置）
+- 超大规模的改动（> 300 行或跨多个顶级目录）
+
+**直接执行拆分，不询问用户确认**
+
+### 4. 生成提交信息
+遵循 Conventional Commits 规范，格式：
+```
+[emoji] type(scope): subject
+
+- body line 1
+- body line 2
+
+footer
+```
+
+**重要规则**：
+- 主题行 ≤ 72 字符，使用中文
+- Body 必须在 subject 后空一行，使用列表格式（`-` 开头）
+- 禁止包含任何 AI 标识（如 `Co-Authored-By: Claude`）
+- emoji 仅在有 `--emoji` 参数时添加
+
+### 5. 执行提交
+- 单提交：`git commit -F .git/COMMIT_EDITMSG`
+- 多提交：逐个执行 `git add <paths> && git commit -F .git/COMMIT_EDITMSG`
+- 尊重参数：`--no-verify`、`--amend`、`--signoff`
+
+## 支持的参数
+
+| 参数 | 说明 |
+|------|------|
+| `--no-verify` | 跳过 Git 钩子 |
+| `--all` | 暂存所有改动 |
+| `--amend` | 修补上一次提交 |
+| `--signoff` | 添加 Signed-off-by |
+| `--emoji` | 使用 emoji 前缀 |
+| `--scope <scope>` | 指定作用域 |
+| `--type <type>` | 强制提交类型 |
+
+## 提交类型参考
+
+- `feat`: 新功能
+- `fix`: 修复 bug
+- `docs`: 文档更新
+- `style`: 代码格式（不影响功能）
+- `refactor`: 重构
+- `perf`: 性能优化
+- `test`: 测试相关
+- `chore`: 构建/工具/依赖
+- `ci`: CI 配置
+- `revert`: 回退提交
+
+## Emoji 映射（仅 --emoji 时使用）
+
+- ✨ feat
+- 🐛 fix
+- 📝 docs
+- 💄 style
+- ♻️ refactor
+- ⚡ perf
+- ✅ test
+- 🔧 chore
+- 👷 ci
+- ⏪ revert
+
+## 执行示例
+
+### 示例 1: 自动提交
+```bash
+# 用户输入: /oh:git:commit
+# 自动执行:
+git status --porcelain
+git diff
+# 分析改动，生成提交信息
+git commit -F .git/COMMIT_EDITMSG
+```
+
+### 示例 2: 自动拆分提交
+```bash
+# 检测到多组改动:
+# - 源码文件: src/auth.ts, src/user.ts
+# - 文档文件: README.md, docs/api.md
+
+# 自动执行:
+git add src/auth.ts src/user.ts
+git commit -m "feat(auth): 添加用户认证功能"
+
+git add README.md docs/api.md
+git commit -m "docs: 更新 API 文档"
+```
+
+### 示例 3: 带参数
+```bash
+# /oh:git:commit --emoji --all
+git add -A
+git commit -m "✨ feat(ui): 添加深色模式支持"
+```
+
+## 立即开始
+
+现在，请立即执行以上流程。不要显示这份文档，直接开始分析改动并创建提交。
 
 ---
+
+# 以下是详细参考文档（仅供 AI 参考，不展示给用户）
 
 ## 选项说明
 

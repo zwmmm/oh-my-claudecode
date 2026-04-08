@@ -3,6 +3,8 @@ name: git-worktree
 description: Use when creating isolated Git worktrees for parallel feature development, managing branch-based workspaces, or needing to switch between contexts without losing uncommitted work.
 model: haiku
 disable-model-invocation: true
+argument-hint: add [<path>] | migrate <target> | list | remove <path> | prune -b <branch> -o --from <source> --stash --track --guess-remote --detach --lock
+context: fork
 ---
 
 # Git Worktree

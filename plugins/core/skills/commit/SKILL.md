@@ -3,6 +3,8 @@ name: git-commit
 description: Use when preparing to commit changes and wanting structured, consistent commit messages following Conventional Commits specification.
 model: haiku
 disable-model-invocation: true
+argument-hint: --no-verify --all --amend --signoff --emoji --scope <scope> --type <type>
+context: fork
 ---
 
 # Git Commit

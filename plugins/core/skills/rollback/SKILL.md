@@ -3,6 +3,8 @@ name: git-rollback
 description: Use when needing to revert a branch to a previous state, undo mistaken commits, or roll back emergency hotfixes to a known-good version.
 model: haiku
 disable-model-invocation: true
+argument-hint: --branch <branch> --target <rev> --mode reset|revert --depth <n> --dry-run --yes
+context: fork
 ---
 
 # Git Rollback

@@ -3,6 +3,8 @@ name: git-clean-branches
 description: Use when repository has dozens of stale or merged branches cluttering the namespace, or when onboarding onto a project with an overwhelming branch list.
 model: haiku
 disable-model-invocation: true
+argument-hint: --base <branch> --stale <days> --remote --dry-run --yes --force
+context: fork
 ---
 
 # Git Clean Branches

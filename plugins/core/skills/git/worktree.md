@@ -1,5 +1,6 @@
 ---
 model: haiku
+disable-model-invocation: true
 ---
 
 # Git Worktree 详细指南
@@ -33,7 +34,7 @@ model: haiku
 | `-b <branch>`      | 创建新分支并检出到 worktree                  |
 | `-o, --open`       | 创建成功后直接用 IDE 打开                    |
 | `--from <source>`  | 指定迁移源路径（migrate 专用）               |
-| `--stash`          | 迁移当前 stash 内容（migrate 专用）          |
+| `--stash`          | 迁移当前 stash 内容（migrate 专用）           |
 | `--track`          | 设置新分支跟踪对应的远程分支                 |
 | `--guess-remote`   | 自动猜测远程分支进行跟踪                     |
 | `--detach`         | 创建分离 HEAD 的 worktree                    |

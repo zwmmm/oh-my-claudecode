@@ -1,5 +1,6 @@
 ---
 model: haiku
+disable-model-invocation: true
 ---
 
 # Git Commit 智能提交命令
@@ -138,7 +139,7 @@ git commit -m "✨ feat(ui): 添加深色模式支持"
 | `--signoff`       | 附加 `Signed-off-by` 行（遵循 DCO 流程）             |
 | `--emoji`         | 在提交信息中包含 emoji 前缀                          |
 | `--scope <scope>` | 指定提交作用域（如 `ui`、`docs`、`api`）             |
-| `--type <type>`   | 强制提交类型（覆盖自动判断）                         |
+| `--type <type>`   | 强制提交类型（覆盖自动判断）                        |
 
 ---
 

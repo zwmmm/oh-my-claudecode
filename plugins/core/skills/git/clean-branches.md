@@ -1,5 +1,6 @@
 ---
 model: haiku
+disable-model-invocation: true
 ---
 
 # Git Clean Branches 详细指南

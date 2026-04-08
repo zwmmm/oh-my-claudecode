@@ -1,5 +1,0 @@
-{
-  "version": "1.0.0",
-  "description": "Pre-commit and other hooks for code quality checks",
-  "hooks": {}
-}

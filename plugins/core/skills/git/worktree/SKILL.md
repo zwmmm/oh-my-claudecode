@@ -1,10 +1,11 @@
 ---
 name: git-worktree
+description: Use when creating isolated Git worktrees for parallel feature development, managing branch-based workspaces, or needing to switch between contexts without losing uncommitted work.
 model: haiku
 disable-model-invocation: true
 ---
 
-# Git Worktree 详细指南
+# Git Worktree
 
 管理 Git worktree，支持智能默认、IDE 集成和内容迁移。
 

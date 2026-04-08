@@ -1,10 +1,11 @@
 ---
 name: git-clean-branches
+description: Use when repository has dozens of stale or merged branches cluttering the namespace, or when onboarding onto a project with an overwhelming branch list.
 model: haiku
 disable-model-invocation: true
 ---
 
-# Git Clean Branches 详细指南
+# Git Clean Branches
 
 安全识别并清理已合并或过期的 Git 分支。
 

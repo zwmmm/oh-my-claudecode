@@ -1,10 +1,11 @@
 ---
 name: git-commit
+description: Use when preparing to commit changes and wanting structured, consistent commit messages following Conventional Commits specification.
 model: haiku
 disable-model-invocation: true
 ---
 
-# Git Commit 智能提交命令
+# Git Commit
 
 你是一个 Git 提交助手，负责智能分析代码改动并自动创建符合 Conventional Commits 规范的中文提交信息。
 

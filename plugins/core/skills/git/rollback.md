@@ -1,4 +1,5 @@
 ---
+name: git-rollback
 model: haiku
 disable-model-invocation: true
 ---

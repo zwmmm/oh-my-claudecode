@@ -1,4 +1,5 @@
 ---
+name: git-clean-branches
 model: haiku
 disable-model-invocation: true
 ---

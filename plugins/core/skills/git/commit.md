@@ -1,4 +1,5 @@
 ---
+name: git-commit
 model: haiku
 disable-model-invocation: true
 ---

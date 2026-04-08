@@ -1,4 +1,5 @@
 ---
+name: git-worktree
 model: haiku
 disable-model-invocation: true
 ---
